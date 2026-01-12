@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Living Room</title>
+</head>
+<style>
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px;
+		background: #ffffff;
+		color: rgb(68, 68, 68);
+	}
+	header img {
+		display: block;
+	}
+	body {
+		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #ffffff;
+		color: rgb(68, 68, 68);
+	}
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding: 10px;
+		gap: 10px;
+	}
+	.container div {
+		padding: 0;
+	}
+	.img-sizing {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+</style>
+<body>
+	<!-- Header -->
+	<header>
+		<a href="index.html">
+			<img src="SimpleTimberLogo.png" alt="Simple Timber" title="Home" width="150px">
+		</a>
+		<h1>Living Room</h1>
+	</header>
+	<!-- Content -->
+	<div class="container">
+		<div><img src="LivingRoom1.jpg" class="img-sizing"></div>
+		<div><img src="LivingRoom2.jpg" class="img-sizing"></div>
+		<div><img src="LivingRoom3.jpg" class="img-sizing"></div>
+		<div><img src="LivingRoom4.jpg" class="img-sizing"></div>
+		<div><img src="LivingRoom5.jpg" class="img-sizing"></div>
+		<div><img src="LivingRoom6.jpg" class="img-sizing"></div>
+	</div>
+</body>
+</html>
