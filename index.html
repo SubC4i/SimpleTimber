@@ -7,10 +7,15 @@
 </head>
 <style>
 	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 20px;
 		background: #ffffff;
 		color: rgb(68, 68, 68);
-		padding: 20px 0;
-		text-align: center;
+	}
+	header img {
+		display: block;
 	}
 	body {
 		margin: 0;
@@ -18,55 +23,84 @@
 		background-color: #ffffff;
 		color: rgb(68, 68, 68);
 	}
-	nav {
-		background: #34495e;
-		padding: 10px;
-		text-align: center;
-	}
-	nav a {
-		color: #fff;
-		margin: 0 15px;
-		text-decoration: none;
-		font-weight: bold;
-	}
-	nav a:hover {
-		text-decoration: underline;
-	}
 	.container {
-		max-width: 1000px;
-		margin: 30px auto;
-		padding: 0 20px;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		padding: 10px;
+		gap: 10px;
 	}
-	footer {
-		background: #2c3e50;
-		color: #fff;
-		text-align: center;
-		padding: 15px 0;
-		position: fixed;
-		bottom: 0;
+	.container div {
+		padding: 0;
+	}
+	/* Image Card */
+	.img-card {
+		position: relative;
+		display: block;
+		text-decoration: none;
+	}
+	.img-card img {
 		width: 100%;
+		height: auto;
+		display: block;
+	}
+	/* Overlay */
+	.img-card .overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.45);
+		color: #fff;
+		font-size: 1.2rem;
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	/* Hover effect */
+	.img-card:hover .overlay {
+		opacity: 1;
 	}
 </style>
 <body>
 	<!-- Header -->
 	<header>
-		<p>Simple Timber</p>
+		<img src="SimpleTimberLogo.png" alt="Simple Timber" width="150px">
 	</header>
-	<!-- Menu -->
-	<nav>
-		<a href="#">Home</a>
-		<a href="#">About</a>
-		<a href="#">Services</a>
-		<a href="#">Contact</a>
-	</nav>
 	<!-- Content -->
 	<div class="container">
-		<h2>Home</h2>
-		<p>asdf</p>
+		<a href="den.html" class="img-card">
+			<img src="Den2.jpg">
+			<div class="overlay">Den</div>
+		</a>
+		<a href="livingroom.html" class="img-card">
+			<img src="LivingRoom1.jpg">
+			<div class="overlay">Living Room</div>
+		</a>
+		<a href="office.html" class="img-card">
+			<img src="Office1.jpg">
+			<div class="overlay">Office</div>
+		</a>
+		<a href="bedroom.html" class="img-card">
+			<img src="Bedroom1.jpg">
+			<div class="overlay">Bedroom</div>
+		</a>
+		<a href="diningroom.html" class="img-card">
+			<img src="DiningRoom1.jpg">
+			<div class="overlay">Dining Room</div>
+		</a>
+		<a href="tvstand.html" class="img-card">
+			<img src="TvStand1.jpg">
+			<div class="overlay">TV Stand</div>
+		</a>
+		<a href="dresser.html" class="img-card">
+			<img src="Dresser1.jpg">
+			<div class="overlay">Dresser</div>
+		</a>
+		<a href="credenza.html" class="img-card">
+			<img src="Credenza4.jpg">
+			<div class="overlay">Credenza</div>
+		</a>
 	</div>
-	<!-- Footer -->
-	<footer>
-		<p>SimpleTimber &#9978;</p>
-	</footer>
 </body>
 </html>
