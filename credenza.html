@@ -2,56 +2,98 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="color-scheme" content="light dark">
+	<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Credenza</title>
+	<style>
+		:root {
+			--gap: 12px;
+			--bg: #ffffff;
+			--surface: #ffffff;
+			--text: rgb(68, 68, 68);
+			--overlay: rgba(0, 0, 0, 0.45);
+		}
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--bg: #0f1115;
+				--surface: #141824;
+				--text: #e7e9ee;
+				--overlay: rgba(0, 0, 0, 0.55);
+			}
+			.img-card .overlay {
+				color: #f3f4f6;
+			}
+		}
+		* {box-sizing: border-box;}
+		html {
+			background: var(--bg);
+		}
+		html, body {
+			background-color: var(--bg);
+		}
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 20px;
+			background: var(--bg);
+			color: var(--text);
+		}
+		header img {
+			display: block;
+		}
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: var(--bg);
+			color: var(--text);
+		}
+		.container {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding: 10px;
+			gap: 10px;
+		}
+		.container div {
+			padding: 0;
+			overflow: hidden;
+			border-radius: 12px;
+		}
+		.img-sizing {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+		/* Phones */
+		@media (max-width: 600px) {
+			.container {
+				grid-template-columns: 1fr;
+			}
+		}
+		/* Dark Mode Logo */
+		@media (prefers-color-scheme: dark) {
+			#site-logo {
+				content: url("SimpleTimberLogoInvert.png");
+			}
+		}
+	</style>
 </head>
-<style>
-	header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 20px;
-		background: #ffffff;
-		color: rgb(68, 68, 68);
-	}
-	header img {
-		display: block;
-	}
-	body {
-		margin: 0;
-		font-family: Arial, Helvetica, sans-serif;
-		background-color: #ffffff;
-		color: rgb(68, 68, 68);
-	}
-	.container {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		padding: 10px;
-		gap: 10px;
-	}
-	.container div {
-		padding: 0;
-	}
-	.img-sizing {
-		width: 100%;
-		height: auto;
-		display: block;
-	}
-</style>
 <body>
 	<!-- Header -->
 	<header>
 		<a href="index.html">
-			<img src="SimpleTimberLogo.png" alt="Simple Timber" title="Home" width="150px">
+			<img id="site-logo" src="SimpleTimberLogo.png" data-dark="SimpleTimberLogoInvert.png" data-light="SimpleTimberLogo.png" alt="Simple Timber" title="Home" width="150px">
 		</a>
 		<h1>Credenza</h1>
 	</header>
 	<!-- Content -->
 	<div class="container">
-		<div><img src="Credenza3.jpg" class="img-sizing"></div>
-		<div><img src="Credenza2.jpg" class="img-sizing"></div>
-		<div><img src="Credenza4.jpg" class="img-sizing"></div>
-		<div><img src="Credenza5.jpg" class="img-sizing"></div>
+		<div><img src="Credenza3.jpg" alt="" class="img-sizing" loading="eager" fetchpriority="high" decoding="async"></div>
+		<div><img src="Credenza2.jpg" alt="" class="img-sizing" loading="eager" fetchpriority="high" decoding="async"></div>
+		<div><img src="Credenza4.jpg" alt="" class="img-sizing" loading="lazy" decoding="async"></div>
+		<div><img src="Credenza5.jpg" alt="" class="img-sizing" loading="lazy" decoding="async"></div>
 	</div>
 </body>
 </html>
