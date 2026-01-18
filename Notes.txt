@@ -1,5 +1,18 @@
 /* Dev Notes */
 
+//Custom Domain
+Create the following 5 entries on domain settings (e.g. Namecheap):
+
+Type:   CNAME Record
+Host:   www
+Value:  YOURUSERNAME.github.io
+TTL:    Automatic
+
+A @ 185.199.108.153
+A @ 185.199.109.153
+A @ 185.199.110.153
+A @ 185.199.111.153
+
 // ImageMagick terminal command .jpg to .webp
 magick mogrify -auto-orient -strip -resize "2000x2000>" -quality 80 -define webp:method=6 -format webp -path webp *.jpg *.JPG
 
