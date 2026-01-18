@@ -2,3 +2,40 @@
 
 // ImageMagick terminal command .jpg to .webp
 magick mogrify -auto-orient -strip -resize "2000x2000>" -quality 80 -define webp:method=6 -format webp -path webp *.jpg *.JPG
+
+//Add GitHub Actions workflow for GitHub Pages deployment
+Create new file = .github/workflows/pages.yml
+yaml = 
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .   # repo root (your site files)
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 1800000
